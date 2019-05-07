@@ -76,13 +76,13 @@ async def on_message(message):
         elif ratio > 0 and ratio < VERIFIED:
             embed = discord.Embed(colour=discord.Colour(0x45278e), url="https://github.com/af1/kdFortniteDiscordBot",)
             embed.set_author(name="Verify " + message.author.display_name, icon_url=message.author.avatar_url)
-            embed.add_field(name=message.author.display_name + " does not have over a " + msgVerified + " K/D.", value="Season 6 Squads K/D: **" + msgRatio + "**", inline=False)
+            embed.add_field(name=message.author.display_name + " does not have over a " + msgVerified + " K/D.", value="Current season squads K/D: **" + msgRatio + "**", inline=False)
             await client.send_message(message.channel, embed=embed)
         elif ratio >= VERIFIED:
             role = discord.utils.get(message.server.roles, name=LIST[0])
             embed = discord.Embed(colour=discord.Colour(0x45278e), url="https://github.com/af1/kdFortniteDiscordBot",)
             embed.set_author(name="Verify " + message.author.display_name, icon_url=message.author.avatar_url)
-            embed.add_field(name=message.author.display_name + " has over a " + msgVerified + " K/D. Verified!", value="Season 6 Squads K/D: **" + msgRatio + "**", inline=False)
+            embed.add_field(name=message.author.display_name + " has over a " + msgVerified + " K/D. Verified!", value="Current season squads K/D: **" + msgRatio + "**", inline=False)
             await client.send_message(message.channel, embed=embed)
             await client.add_roles(message.author, role) 
             
